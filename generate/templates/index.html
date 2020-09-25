@@ -1,0 +1,42 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div class="container">
+	   <!--  <a class="display-3" href="#" style="text-decoration: none; color: inherit;"> 
+			<img src="{% static 'generate/icon.png'" width="32" height="32" class="d-inline-block align-top">
+			SONNET.AI 
+		</a> -->
+		<a href="." style="text-decoration: none; color: inherit;" > <h1 class="display-3">SONNET.AI</h1></a>
+	</div>
+
+	<div class="jumbotron">
+		<div class="container">
+			<p class="lead">Generate your own sonnets based upon Shakespeare's famous Sonnets</p>
+			<form action="/event" id='systemForm' method="POST">
+				{% csrf_token %}
+				<input type="text" name='line1' value="When in the chronicle of wasted time I see" class="form-control"><br>
+
+				<input type="submit" value="Create" class="btn btn-primary btn-lg">
+			</form><br>
+
+			{{ system }}
+			<br><br><br><br><br><br><br><br><br>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
